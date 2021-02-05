@@ -1,0 +1,43 @@
+version: '3'
+
+services:
+
+  bot_app:
+    restart: always
+    build:
+      context: .
+      dockerfile: bot.Dockerfile
+    environment:
+      - TELEGRAM_API_TOKEN=***
+      - POSTGRESQL_HOST=bot_datebase
+      - POSTGRES_DB=test
+      - POSTGRES_PORT=5432
+    volumes:
+      - bot_logs:/logs
+    networks:
+      - news_chanal
+
+  bot_datebase:
+    image: postgres
+    restart: always
+    # При используем минимальную базовую производительность бд
+    command: "postgres -c max_connections=200"
+    environment:
+      - POSTGRES_USER=user_test
+      - POSTGRES_PASSWORD=password_test
+      - POSTGRES_DB=test
+    volumes:
+      - bot_postgress_data:/var/lib/postgresql/data
+    ports:
+      - "5433:5432"
+    networks:
+      - news_chanal
+    logging:
+      driver: none
+
+volumes:
+  bot_postgress_data:
+  bot_logs:
+
+networks:
+   news_chanal

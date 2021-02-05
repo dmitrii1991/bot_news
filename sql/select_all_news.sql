@@ -1,0 +1,1 @@
+select title, date_news from public.news;

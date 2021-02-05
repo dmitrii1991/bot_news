@@ -1,0 +1,7 @@
+docker-compose.yml
+.pyc
+.log
+.idea
+
+__pycache__
+logs/*
