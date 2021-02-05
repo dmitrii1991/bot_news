@@ -48,7 +48,9 @@ class PostgresDB:
             records_list_template = ','.join(['%s'] * len(data))
             cursor.execute(self.read_sql_file(name_file).format(records_list_template), data)
         if select:
-            return cursor.fetchall()
+            result = cursor.fetchall()
+            conn.close()
+            return result
         if commit:
             conn.commit()
         conn.close()

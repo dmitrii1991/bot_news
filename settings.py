@@ -8,7 +8,7 @@ ROOT_PATH = abspath(dirname(__file__))
 LOGS_DIR = join(ROOT_PATH, 'logs')
 SQL_DIR = join(ROOT_PATH, 'sql')
 
-API_TOKEN = getenv("TELEGRAM_API_TOKEN", "")
+API_TOKEN = getenv("TELEGRAM_API_TOKEN")
 PROXY_URL = getenv("TELEGRAM_PROXY_URL")
 
 POSTGRES_USER = getenv("POSTGRES_USER", "user_test")
@@ -17,6 +17,10 @@ POSTGRES_DB = getenv("POSTGRES_USER", "test")
 POSTGRES_PORT = getenv("POSTGRES_PORT", 5433)
 POSTGRESQL_HOST = getenv("POSTGRESQL_HOST", "localhost")
 
+PRODACTION_CHAT_ID = getenv("PRODACTION_CHAT_ID", -458033758)
+TEST_CHAT_ID = None
+
+PARSE_URL = "https://prometey.digital/blog/"
 
 config = {
     "handlers": [
