@@ -45,7 +45,7 @@ def firstnews(update, context):
 
 
 def listnews(update, context):
-    """Первая новость"""
+    """Список новостей"""
     all_news = psg_bd.execute('select_all_news.sql', select=True)
     message = ''
     if all_news:
