@@ -5,7 +5,7 @@ services:
   bot_app:
     restart: always
     build:
-      context: .
+      context: sql
       dockerfile: bot.Dockerfile
     environment:
       - TELEGRAM_API_TOKEN=***

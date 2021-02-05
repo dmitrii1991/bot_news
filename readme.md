@@ -15,7 +15,7 @@
     * **/listnews** – показывает дату и заголовки всех новостей
 
 ## запуск
-
+*  переименовать **test-docker-compose.yaml**  в **docker-compose.yaml** 
 * задать в **docker-compose.yaml** переменную TELEGRAM_API_TOKEN (поменять пароль и логин в БД по опциональности)
 ```yaml
   bot_app:
